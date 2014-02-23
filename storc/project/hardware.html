@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <title>StoRC Hardware</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
+
+    <!-- padding at the top to make room for the navbar -->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+      p {
+        font-size:16px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+          <a class="brand" href="../storc.html">StoRC</a>
+          
+	  <ul class="nav">
+            <li><a href="../storc.html">Home</a></li>
+            <li><a href="../team.html">Team Members</a></li>
+	    <li class="dropdown active">
+              <a href="" class="dropdown-toggle"
+		 data-toggle="dropdown">
+		Project
+		<b class="caret"></b>
+	      </a>
+              <ul class="dropdown-menu">
+                <li><a href="overview.html">Overview</a></li>
+		<li><a href="">Hardware</a></li>
+		<li><a href="software.html">Software</a></li>
+		<li><a href="flight.html">Flight Dynamics</a></li>
+                <li><a href="controls.html">Controls</a></li>
+		<li><a href="payload.html">Payload System</a></li>
+		<li><a href="eval.html">Evaluation and Test</a></li>
+              </ul>
+            </li>
+	    
+            <li><a href="../pictures.html">Pictures</a></li>
+	    <li><a href="../videos.html">Videos</a></li>
+          </ul>
+          
+	</div>
+      </div>
+    </div> <!-- end navbar -->
+    
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+
+	<div class="span2">
+	  <img src="../logo.png"/>
+	</div>
+
+	<div class="span10">
+	  
+	  <div class="page-header">
+	    <h1>Hardware</h1>
+	  </div>
+
+	  <div class="row-fluid">
+
+	    <div class="span5">
+	      <h3>Airplane</h3>
+	      <p>
+		We originally chose to use
+		a <a href="http://www.nitroplanes.com/projet-003-rq11.html">
+		  PROJET RQ-11 Raven</a> airplane
+		as our airplane body.  It has a large fuselage that would be
+		helpful when incorporating our electronics and payload
+		release system.  However, the powerful motor made it
+		more difficult to control than we had hoped, and its
+		components were expensive, not available for individual
+		purchase (for repairs), and were not easy to repair
+		ourselves.  In addition, we had a setback when the Raven
+		went out of stock from our suppliers.  This reasoning
+		caused us to change to
+		a <a href="http://secure.hobbyzone.com/catalog/HZ/index/index_park_flyers_rtf/HBZ7400.html"> 
+		  HobbyZone SuperCub</a> airplane.  Although it has less space
+		inside for packaging, it is easy to fly, cheaper, and
+		replacement parts can easily be obtained.  This simpler
+		plane allowed us to focus on the core aspects of our project.
+	      </p>
+	    </div>
+
+	    <div class="span7" style="text-align:center;">
+	      
+	      <ul class="thumbnails">
+		<li>
+		  <div class="thumbnail">
+		    <img src="pics/hardware_airplane.jpg" alt="SuperCub" />
+		    <p>Our SuperCub airplane</p>
+		  </div>
+		</li>
+		
+		<li>
+		  <div class="thumbnail">
+		    <img src="pics/hardware_packaging.jpg" />
+		    <p>Packaging mockup with the PROJET RQ-11
+		    Raven</p>
+		  </div>
+		</li>
+	      </ul>
+
+	    </div>
+
+	  </div>
+
+
+
+
+	  <h3>Electronics</h3>
+	  <p>
+	    The StoRC system uses several electronic components.
+	    On-board hardware includes sensors, a microcontroller,
+	    radio transceivers, servos, and an ESC and motor.  Ground
+	    hardware is composed of radio transceivers and a
+	    monitoring laptop.  These are described in more detail below.
+	  </p>
+	  
+	  <br/>
+	  
+	  <div class="tabbable tabs-left" style="font-size:16px;">
+	    <ul class="nav nav-tabs">
+	      <li class="active"><a href="#tab0" data-toggle="tab">Component Diagram</a></li>
+	      <li><a href="#tab1" data-toggle="tab"> Sensors </a></li>
+	      <li><a href="#tab2" data-toggle="tab"> Microcontroller </a></li>
+	      <li><a href="#tab3" data-toggle="tab"> ESC and Motor </a></li>
+	      <li><a href="#tab4" data-toggle="tab"> RC System </a></li>
+	      <li><a href="#tab5" data-toggle="tab"> XBee Tranceivers </a></li>
+	      
+	    </ul>
+
+	    <div class="tab-content">
+	      
+	      <div class="tab-pane active" id="tab0" style="text-align:center;">
+		<img src="pics/hardware_diagram.png"/>
+	      </div>
+	      
+	      <div class="tab-pane" id="tab1"> <!-- Sensor tab -->
+		
+		<div class="row-fluid">
+		  <div class="span8">
+		    <h3>ArduPilot Mega 1.x IMU Shield</h3>
+		    <p>The <a href="http://store.diydrones.com/productdetails_popup.asp?productcode=BR-0012-01">
+			ArduPilot Mega IMU Shield</a> is a custom
+		      shield for the ArduPilot Mega board that met all of
+		      our sensor needs.  The shield contains a 3-axis
+		      accelerometer, 3-axis gyroscope, pressure and
+		      temperature sensors, and 16MB flash memory, as well as
+		      GPS, Pitot probe and magnetometer support (sold
+		      separately).  These sensors met all of our needs
+		      and using this pre-integrated board
+		      significantly reduced our setup time.  The
+		      downside was that we had to figure out and work
+		      with the existing ArduPilot sensor libraries.
+		    </p>
+		  </div>
+		  
+		  <div class="span3" style="text-align:center;">
+		    <img src="pics/hardware_imu_shield.jpg" alt="ArduPilot
+		    Mega IMU Shield" />
+
+		    <br/>
+		    
+		    <em style="font-size:12px;">
+		      <a href="http://store.diydrones.com/productdetails_popup.asp?productcode=BR-0012-01">source</a>
+		    </em>
+
+		  </div>
+
+		</div> <!-- end row fluid -->
+
+		<div class="row-fluid">
+		  
+		  <div class="span3" style="text-align:center;">
+		    <img src="pics/hardware_gps.jpg" />
+
+		    <br/>
+		    
+		    <em style="font-size:12px;">
+		      <a href="https://store.diydrones.com/ProductDetails.asp?ProductCode=MT3329-02">source</a>
+		    </em>
+
+		  </div>
+
+		  <div class="span8">
+		    <h3>GPS</h3>
+		    <p>The <a href="https://store.diydrones.com/ProductDetails.asp?ProductCode=MT3329-02">
+			MediaTek MT3329 GPS</a> was one of the
+			recommended GPS units by DIYDrones.  It took
+			some time to warm up and get a lock before
+			each flight test.  The connector for the cable
+			is also fragile, as we discovered when we
+			broke the plastic during one of our tests.
+		      
+		    </p>
+		  </div>
+		  
+		</div> <!-- end row fluid -->
+		
+		<br/>
+
+		<div class="row-fluid">
+
+		  <div class="span8">
+		    <h3>Pitot Probe</h3>
+		    <p>The <a href="http://store.diydrones.com/Kit_MPXV7002DP_p/kt-mpxv7002dp-01.htm">
+			airspeed kit</a> we used is from DIYDrones,
+			and includes a pitot probe, plastic tubing, a PWM
+			cable, and uses a MPXV7002DP sensor. This
+			sensor
+			(<a href="http://www.freescale.com/files/sensors/doc/data_sheet/MPXV7002.pdf">datasheet</a>)
+			only outputs the differential pressure betwen
+			its ports and thus cannot be used to obtain
+			only the static pressure, for example.  But it
+			was fairly accurate and worked well enough for
+			our purposes.
+		    </p>
+		  </div>
+		  
+		  <div class="span3" style="text-align:center;">
+		    <img src="pics/hardware_pitot.jpg" />
+
+		    <br/>
+		    
+		    <em style="font-size:12px;">
+		      <a href="http://store.diydrones.com/Kit_MPXV7002DP_p/kt-mpxv7002dp-01.htm">source</a>
+		    </em>
+
+		  </div>
+		  
+		</div> <!-- end row fluid -->
+
+
+		<div class="row-fluid">
+		  
+		  <div class="span3" style="text-align:center;">
+		    <img src="pics/hardware_mag.jpg" />
+
+		    <br/>
+		    
+		    <em style="font-size:12px;">
+		      <a href="https://store.diydrones.com/ProductDetails.asp?ProductCode=BR-HMC5883-01">source</a>
+		    </em>
+
+		  </div>
+
+		  <div class="span8">
+		    <h3>Magnetometer</h3>
+		    <p>The 3-axis <a href="https://store.diydrones.com/ProductDetails.asp?ProductCode=BR-HMC5883-01">
+			magnetometer</a> we used was also from
+			DIYDrones.  Paired with the orientation code
+			built into the ArduPilot sensor libraries, as
+			well as the accelerometer and gyros, it
+			allowed us to determine the airplane's
+			orientation fairly accurately.  This was a
+			necessary component of our project.
+		      
+		    </p>
+		  </div>
+		  
+		</div> <!-- end row fluid -->
+
+
+	      </div>
+
+
+	      <div class="tab-pane" id="tab2"> <!-- Micro tab -->
+		
+		<div class="row-fluid">
+		  <div class="span8">
+		    <h3>ArduPilot Mega 1.x</h3>
+		    <p>The <a href="http://store.diydrones.com/ArduPilot_Mega_kit_p/kt-apm-01.htm">
+			ArduPilot Mega</a> is a custom Arduino board
+			designed specially for hobby UAV applications
+			by the DIYDrones group.  It was a smart choice
+			for our microcontroller because it is a
+			tested system that allowed us to piggy back
+			off of existing sensor reading and logging
+			functionality.  It also uses the popular and
+			easy to use Arduino programming language.
+			While additional work was required to
+			understand its code (documentation was not as
+			abundant as we hoped) and
+			adapt its coding to our purposes, overall it
+			proved to be a time saver and allowed us to
+			focus on the more significant components of
+			our project.  We ended up writing our own code
+			and only reusing the libraries for reading
+			from the sensors and downloading data onto a
+			laptop.
+		    </p>
+		  </div>
+		  
+		  <div class="span3" style="text-align:center;">
+		    <img src="pics/hardware_ardupilot_mega.jpg"
+		    alt="ArduPilot Mega" />
+
+		    <br/>
+
+		    <em style="font-size:12px;">
+		      <a href="http://code.google.com/p/ardupilot-mega/wiki/Assembly">source</a>
+		    </em>
+		  </div>
+
+		</div> <!-- end row fluid -->
+
+	      </div>
+	      
+	      <div class="tab-pane" id="tab3"> <!-- ESC and Motor tab -->
+
+		<div class="row-fluid">
+		  <div class="span8">
+		    <h3>ElectriFly C-35 ESC</h3>
+		    <p>The <a href="http://www.electrifly.com/escs/gpmm2005.html">
+			ElectriFly C-35 ESC</a> is a hobby
+			<a href="http://en.wikipedia.org/wiki/Electronic_speed_control">ESC</a>
+			for use in R/C airplanes.  It is programmable
+			and supports both NiCd and
+			LiPo batteries.  Ours took significant abuse
+			and had to be repaired on more than one occasion.
+		    </p>
+		  </div>
+		  
+		  <div class="span3" style="text-align:center;">
+		    <img src="pics/hardware_esc.jpg" />
+
+		    <br/>
+		    <em style="font-size:12px;">
+		      <a href="http://www.electrifly.com/escs/gpmm2005.html">source</a>
+		    </em>
+		  </div>
+
+		</div> <!-- end row fluid -->
+
+
+		<div class="row-fluid">
+		  
+		  <div class="span3" style="text-align:center;">
+		    <img src="pics/hardware_motor.jpg" />
+
+		    <br/>
+
+		    <em style="font-size:12px;">
+		      <a href="http://secure.hobbyzone.com/search/HBZ7134.html">source</a>
+		    </em>
+		  </div>
+
+		  <div class="span8">
+		    <h3>SuperCub Brushed DC Motor</h3>
+		    <p>The motor we used is a brushed motor that comes
+			with the SuperCub kit (Unfortunately the
+			brushless motor we used for the Raven airplane
+			was too powerful to be used with the
+			SuperCub).  We needed to perform experimental
+			testing to determine the motor constants and
+			internal resistance of the motor.  This data
+			was used in our simulations and analysis later
+			on.  The motor proved to be slightly less
+			powerful than we would have liked, as we had
+			barely enough power to fly with the weight of
+			all our components.
+		    </p>
+		  </div>
+		  
+		</div> <!-- end row fluid -->
+
+	      </div>
+
+	      <div class="tab-pane" id="tab4"> <!-- RC System tab -->
+
+		<div class="row-fluid">
+		  <div class="span8">
+		    <h3>FlySky TH9X 2.4GHz RC System</h3>
+		    <p>The <a href="http://www.nitroplanes.com/79p-th9x-r9b-9channel-radio.html">
+		    FlySky TH9X RC System</a> is an (effectively) 8
+		    channel RC system for hobby applications. This was
+		    a great option for us because the 8 channels meant
+		    that in addition to conventional elevator, rudder,
+		    and throttle control, we had 5 additional inputs
+		    for our airplane.  This allowed us to tweak the
+		    system code mid-flight, which sped up our testing and
+		    increased our data analysis capabilities.  In addition, some of
+		    the channels are dial knobs and some are switches,
+		    giving us more freedom when choosing which
+		    system parameters to tweak.
+		    </p>
+		  </div>
+		  
+		  <div class="span3" style="text-align:center;">
+		    <img src="pics/hardware_rc.png" />
+		  </div>
+
+		</div> <!-- end row fluid -->
+		
+	      </div>
+
+	      <div class="tab-pane" id="tab5"> <!-- XBee tab -->
+
+		<div class="row-fluid">
+		  <div class="span8">
+		    <h3>XBee Pro 900 XSC</h3>
+		    <p>The <a href="http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-pro-xsc#overview">
+		    XBee Pro 900 XSC</a> RF module is a wireless radio
+		    module that is easy to setup, easy to read data
+		    from, and has a line-of-sight range of over 5
+		    miles.  This tranceiver worked well for us.  We
+		    used simple serial communication to write to and
+		    read from two of the modules in order to send data
+		    from the airplane to the laptop on the ground.  We
+		    could view the data in real time during flight
+		    tests as well as log it for later analysis.
+		    </p>
+		  </div>
+		  
+		  <div class="span3" style="text-align:center;">
+		    <img src="pics/hardware_xbee.jpg" />
+		  </div>
+
+		</div> <!-- end row fluid -->
+		
+
+	      </div>
+
+	    </div>
+
+	  </div> <!-- end div tabbable -->
+
+	  <br/>
+	  <br/>
+
+	  <div style="text-align:center;">
+	    <a class="btn btn-danger btn-large" href="overview.html">
+	      <i class="icon-chevron-left icon-white"></i> Back to Overview
+	    </a>
+	    
+	    <a class="btn btn-danger btn-large" href="software.html">
+	      Forward to Software <i class="icon-chevron-right icon-white"></i>
+	    </a>
+	  </div>
+
+
+	</div>
+
+      </div> <!-- end row fluid -->
+
+    </div> <!-- end container-fluid -->
+
+
+    <div class="container-fluid" style="margin-left:6%;
+					margin-right:6%;
+					text-align: center;"> <!-- Footer -->
+
+      <hr/>
+      
+      Developed using
+      Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+      
+      <br/>
+      <br/>
+
+      <a rel="license" 
+	 href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">
+	<img alt="Creative Commons License" style="border-width:0" 
+	     src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/>
+      </a>
+      
+      <br/>
+      
+      This site's content is licensed under a <a rel="license"
+	href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative
+	Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+	License</a> unless otherwise noted.
+      
+      <br/>
+      <br/>
+
+    </div> <!-- end footer -->
+
+    <!-- Javascript -->
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+    <script src="../../js/bootstrap-tab.js"></script>
+
+  </body>
+
+</html>

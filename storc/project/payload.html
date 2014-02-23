@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <title>StoRC Payload System</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
+
+    <!-- padding at the top to make room for the navbar -->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+      p {
+        font-size:16px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+          <a class="brand" href="../storc.html">StoRC</a>
+          
+	  <ul class="nav">
+            <li><a href="../storc.html">Home</a></li>
+            <li><a href="../team.html">Team Members</a></li>
+	    <li class="dropdown active">
+              <a href="" class="dropdown-toggle"
+		 data-toggle="dropdown">
+		Project
+		<b class="caret"></b>
+	      </a>
+              <ul class="dropdown-menu">
+                <li><a href="overview.html">Overview</a></li>
+		<li><a href="hardware.html">Hardware</a></li>
+		<li><a href="software.html">Software</a></li>
+		<li><a href="flight.html">Flight Dynamics</a></li>
+                <li><a href="controls.html">Controls</a></li>
+		<li><a href="">Payload System</a></li>
+		<li><a href="eval.html">Evaluation and Test</a></li>
+              </ul>
+            </li>
+	    
+            <li><a href="../pictures.html">Pictures</a></li>
+	    <li><a href="../videos.html">Videos</a></li>
+          </ul>
+          
+	</div>
+      </div>
+    </div> <!-- end navbar -->
+    
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+
+	<div class="span2">
+	  <img src="../logo.png"/>
+	</div>
+
+	<div class="span10">
+	  
+	  <div class="page-header">
+	    <h1>Payload System</h1>
+	  </div>
+	  
+	  <h2>Drift Model</h2>
+	  
+	  <p>
+	    The payload drift model is based on a linear
+	    approximation of drift used in military
+	    applications <sup><a href="http://www.globalsecurity.org/military/library/policy/army/fm/57-38/Ch6.htm">[example]</a></sup>. The model takes into account the
+	    altitude of the drop and the velocity of the wind in
+	    both the longitudinal and latitudinal directions. It
+	    can be formulated as <img src="pics/payload_eqn.png"/>.  We
+	    first calibrated the model using real test data to find the drift
+	    coefficient, K, which is a function of the parachute and
+	    payload parameters. Once the drift coefficient was
+	    found, the model can be used to calculate the drift of
+	    the parachute in each direction.
+	  </p>
+	  <p>
+	    Five different test payload drops were conducted to determine the
+	    drift coefficient. A map of these test drops is
+	    shown on the left below. These test drops were conducted
+	    under various wind speeds and resulted in a wide
+	    distribution of drift radius. The plot below right shows the linear
+	    relationship between drift and the product of wind
+	    speed and altitude, the slope of which is the experimental
+	    drift coefficient (K = 0.2564). This plot is obviously
+	    sparse and we would have liked to collect more data if
+	    we had the time for more flight tests.  We also wish we
+	    had the time to validate this drift model with
+	    additional drop tests.
+	  </p>
+
+	  <br/>
+	  
+	  <div class="row-fluid" style="text-align:center; valign:middle;">
+	    <div class="span6">
+	      <img src="pics/payload_tests.png" />
+	    </div>
+	    
+	    <div class="span6">
+	      <img src="pics/payload_drift.png" />
+	    </div>
+	    
+	  </div>
+
+	  <br/>
+	  <br/>
+
+	  <h2>Wind Data</h2>
+
+
+	  <p> To integrate the drift model into our payload drop
+	    process, we need to provide it with some data, namely
+	    the wind velocity as well as altitude of the drop. To
+	    obtain the current wind speed on the aircraft, we calculate the difference
+	    between the GPS ground speed and the airspeed as
+	    measured by the Pitot probe (see example below left). 
+	    This wind speed data is recorded
+	    with GPS heading data during the entire ascent of the
+	    aircraft, creating a 3-dimensional wind profile of the 
+	    ascent (see example below right). Once a
+	    constant cruise altitude is reached, the average wind
+	    speed in the East-West and North-South
+	    directions is used to calculate the drift the
+	    parachute is expected to undergo in each direction
+	    according to the linear model.
+	  </p>
+
+	  <br/>
+
+	  <div class="row-fluid" style="text-align:center; valign:middle;">
+	    <div class="span6">
+	      <img src="pics/payload_airspeed.png" />
+	    </div>
+	    
+	    <div class="span6">
+	      <img src="pics/payload_windprofile.png" />
+	    </div>
+	    
+	  </div>
+
+	  <p>
+	    The target location is then offset by the magnitude of the
+	    drift component in each direction to obtain the
+	    final drop location.  This is the location the
+	    airplane should drop the payload so that it will drift
+	    to the original intended target location. This drop
+	    location becomes the airplane's new destination.  Once
+	    the airplane reaches the location, the payload release
+	    mechanism is activated to release the payload.
+	  </p>
+	  
+	  <br/>
+
+	  <h2>Release Mechanism</h2>
+	  
+	  <p>
+	    We iterated through several different designs for our
+	    payload release.  Most designs involved servos either
+	    dropping dispensable doors or un-hinging
+	    compartments.  The payload release mechanism was also
+	    influenced significantly by our choice of aircraft.
+	    When we were thinking of using the Raven RQ-11, we had
+	    much more room to design in than with the SuperCub.
+	    In the end, we went with a simple servo mechanism that
+	    released a hinged door, due to the space constraints
+	    of the Supercub.
+	  </p>
+
+	  <br/>
+
+	  <div style="text-align:center;">
+	    <a class="btn btn-danger btn-large" href="controls.html">
+	      <i class="icon-chevron-left icon-white"></i> Back to Controls
+	    </a>
+	    
+	    <a class="btn btn-danger btn-large" href="eval.html">
+	      Forward to Evaluation and Test <i class="icon-chevron-right icon-white"></i>
+	    </a>
+	  </div>
+
+
+	</div>
+
+      </div> <!-- end row fluid -->
+
+    </div> <!-- end container-fluid -->
+
+
+    <div class="container-fluid" style="margin-left:6%;
+					margin-right:6%;
+					text-align: center;"> <!-- Footer -->
+
+      <hr/>
+      
+      Developed using
+      Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+
+      
+      <br/>
+      <br/>
+
+      <a rel="license" 
+	 href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">
+	<img alt="Creative Commons License" style="border-width:0" 
+	     src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/>
+      </a>
+      
+      <br/>
+      
+      This site's content is licensed under a <a rel="license"
+	href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative
+	Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+	License</a> unless otherwise noted.
+      
+      <br/>
+      <br/>
+
+    </div> <!-- end footer -->
+
+    <!-- Javascript -->
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+
+  </body>
+
+</html>

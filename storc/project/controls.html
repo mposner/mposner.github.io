@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <title>StoRC Controls</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
+
+    <!-- padding at the top to make room for the navbar -->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+      p {
+        font-size:16px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+          <a class="brand" href="../storc.html">StoRC</a>
+          
+	  <ul class="nav">
+            <li><a href="../storc.html">Home</a></li>
+            <li><a href="../team.html">Team Members</a></li>
+	    <li class="dropdown active">
+              <a href="" class="dropdown-toggle"
+		 data-toggle="dropdown">
+		Project
+		<b class="caret"></b>
+	      </a>
+              <ul class="dropdown-menu">
+                <li><a href="overview.html">Overview</a></li>
+		<li><a href="hardware.html">Hardware</a></li>
+		<li><a href="software.html">Software</a></li>
+		<li><a href="flight.html">Flight Dynamics</a></li>
+                <li><a href="">Controls</a></li>
+		<li><a href="payload.html">Payload System</a></li>
+		<li><a href="eval.html">Evaluation and Test</a></li>
+              </ul>
+            </li>
+	    
+            <li><a href="../pictures.html">Pictures</a></li>
+	    <li><a href="../videos.html">Videos</a></li>
+          </ul>
+          
+	</div>
+      </div>
+    </div> <!-- end navbar -->
+    
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+
+	<div class="span2">
+	  <img src="../logo.png"/>
+	</div>
+
+	<div class="span10">
+	  
+	  <div class="page-header">
+	    <h1>Controls</h1>
+	  </div>
+	 
+	  <p>
+	    The controls system is the algorithm that utilizes a
+	    variety of sensors to autonomously navigate and control
+	    the airplane without any pilot assistance. An overview of
+	    the final controls system implemented on the StoRC
+	    aircraft is shown below.
+	  </p>
+
+	  <div class="row-fluid">
+	    
+	    <div class="span5">
+	      <img src="pics/controls_overview.png" />
+	    </div>
+
+	    <div class="span7">
+	      <p>
+		The controls system consists of two components: the navigation
+		algorithm (outer loop) and the steady flight algorithm
+		(inner loop). The navigation algorithm compares
+		the airplane's target coordinates to its current
+		location. Based on this information, it determines the
+		appropriate heading, turn rate, and bank angle that are
+		necessary for the plane to reach its target. It then sends
+		these desired parameters to the controls inner loop.
+	      </p>
+	      <p>
+		The inner loop attempts to achieve the desired airplane commands that
+		it receives from the navigation outer loop. This algorithm
+		utilizes proportional, integral, and derivative (PID)
+		control to minimize the difference between the desired and
+		the actual values.
+	      </p>
+	      <p>
+		Rudder PID control is used to achieve the desired turn
+		rate (since our airplane does not have ailerons to
+		directly control roll). Airplane turn rate is directly proportional to its
+		bank (roll) angle. Therefore, for a given target turn
+		rate, the rudder must deflect appropriately in order to
+		make the plane roll and thus turn. Similarly, throttle PID
+		control is used to achieve a desired climb rate.
+	      </p>
+	    </div>
+	 
+	  </div>
+
+	  <br/>
+	  <br/>
+
+	  <div class="row-fluid">
+	    
+	    <div class="span6" style="text-align:center;">
+	      	      
+	      <ul class="thumbnails">
+		<li>
+		  <div class="thumbnail">
+		    <img src="pics/controls_navigation.png" />
+		    <p><b>Navigation Algorithm</b></p>
+		  </div>
+		</li>
+	      </ul>
+
+	    </div>
+
+	    <div class="span6" style="text-align:center;">
+	      
+	      <ul class="thumbnails">
+		<li>
+		  <div class="thumbnail">
+		    <img src="pics/controls_rudder.png" />
+		    <p><b>Rudder PID Control</b></p>
+		  </div>
+		</li>
+	      </ul>
+
+	    </div>
+
+	  </div>
+
+	  <h2>Simulink Model</h2>
+
+	  <p>
+	    A Simulink controls model was created and developed in conjunction
+	    with the MATLAB dynamics model. In the early stages of the
+	    project, the controls model was used to determine
+	    qualitative effects of control algorithms.
+	    However, once the dynamics model was adjusted to very closely simulate
+	    real life airplane behavior, as discussed in the Flight
+	    Dynamics section,
+	    it was used to quantitatively analyze control algorithms
+	    and to determine the nominal controls gain values to be
+	    used on the aircraft.
+	  </p>
+
+	  <div class="row-fluid" style="text-align:center;">
+	    <img src="pics/controls_simulink.png"/>
+	  </div>
+	  
+	  <br/>
+	  
+	  <div class="row-fluid">
+	    <div class="span5">
+	      
+	      <p>
+		On the right is a demonstration of the Simulink
+		controls model.  We have given it a set of target
+		coordinates.  The controls model runs and continuously
+		adjusts the airplane from its starting trajectory so that
+		it reaches its intended target.  Once it reaches the
+		target, it circles around it.
+	      </p>
+
+	    </div>
+	    <div class="span7">
+	      <img src="pics/controls_waypoint.png" />
+	    </div>
+	  </div>
+
+	  <br />
+
+	  <div style="text-align:center;">
+	    <a class="btn btn-danger btn-large" href="flight.html">
+	      <i class="icon-chevron-left icon-white"></i> Back to
+	      Flight Dynamics
+	    </a>
+	    
+	    <a class="btn btn-danger btn-large" href="payload.html">
+	      Forward to Payload System <i class="icon-chevron-right icon-white"></i>
+	    </a>
+	  </div>
+
+
+	</div>
+
+      </div> <!-- end row fluid -->
+
+    </div> <!-- end container-fluid -->
+
+
+    <div class="container-fluid" style="margin-left:6%;
+					margin-right:6%;
+					text-align: center;"> <!-- Footer -->
+
+      <hr/>
+      
+      Developed using
+      Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+
+      
+      <br/>
+      <br/>
+
+      <a rel="license" 
+	 href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">
+	<img alt="Creative Commons License" style="border-width:0" 
+	     src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/>
+      </a>
+      
+      <br/>
+      
+      This site's content is licensed under a <a rel="license"
+	href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative
+	Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+	License</a> unless otherwise noted.
+      
+      <br/>
+      <br/>
+
+    </div> <!-- end footer -->
+
+    <!-- Javascript -->
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="robots" content="noindex">
+
+    <title>Videos</title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+
+    <!-- padding at the top to make room for the navbar -->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+
+    <script src="../flowplayer/flowplayer-3.2.10.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+          <a class="brand" href="storc.html">StoRC</a>
+          
+	  <ul class="nav">
+            <li><a href="storc.html">Home</a></li>
+            <li><a href="team.html">Team Members</a></li>
+	    <li class="dropdown">
+              <a href="" class="dropdown-toggle"
+		 data-toggle="dropdown">
+		Project
+		<b class="caret"></b>
+	      </a>
+              <ul class="dropdown-menu">
+                <li><a href="project/overview.html">Overview</a></li>
+		<li><a href="project/hardware.html">Hardware</a></li>
+		<li><a href="project/software.html">Software</a></li>
+		<li><a href="project/flight.html">Flight Dynamics</a></li>
+                <li><a href="project/controls.html">Controls</a></li>
+		<li><a href="project/payload.html">Payload System</a></li>
+		<li><a href="project/eval.html">Evaluation and Test</a></li>
+              </ul>
+            </li>
+	    
+            <li><a href="pictures.html">Pictures</a></li>
+	    <li class="active"><a href="">Videos</a></li>
+          </ul>
+          
+	</div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+
+      <div class="row-fluid">
+
+	<div class="span2">
+
+	  <img src="logo.png">
+
+	</div> <!-- end sidebar -->
+
+	<div class="span10">
+	  
+	  <div class="page-header">
+	    <h1>Video Gallery</h1>
+	  </div>
+
+	  <ul class="thumbnails">
+<li> <a class="player" href="videos/vid1.mp4" style="display:block;width:425px;height:300px;"> <img src="splash/s_vid1.png"> </a> </li>
+<li> <a class="player" href="videos/vid2.mp4" style="display:block;width:425px;height:300px;"> <img src="splash/s_vid2.png"> </a> </li>
+
+  	    <script language="JavaScript">
+	      flowplayer("a.player","../flowplayer/flowplayer-3.2.11.swf");
+	    
+	    </script>
+	  
+	  </ul>
+	
+        </div> <!-- end content -->
+    
+      </div> <!-- end row-fluid -->
+
+    </div> <!-- end container-fluid -->
+
+    <div class="container-fluid" style="text-align: center;"> <!-- Footer -->
+
+      <hr/>
+      
+      Developed using
+      <a href="http://flowplayer.org/">Flowplayer</a> and Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+      
+      <br/>
+      <br/>
+
+      <a rel="license" 
+	 href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">
+	<img alt="Creative Commons License" style="border-width:0" 
+	     src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/>
+      </a>
+      
+      <br/>
+      
+      This site's content is licensed under a <a rel="license"
+	href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative
+	Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+	License</a> unless otherwise noted.
+      
+      <br/>
+      <br/>
+
+    </div> <!-- end footer -->
+
+    <!-- Javascript -->
+    <script src="../jquery.min.js"></script>
+    <script src="../bootstrap-dropdown.js"></script>
+
+  </body>
+
+</html>

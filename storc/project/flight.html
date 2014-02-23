@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <title>StoRC Flight Dynamics</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
+
+    <!-- padding at the top to make room for the navbar -->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+      p {
+        font-size:16px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+          <a class="brand" href="../storc.html">StoRC</a>
+          
+	  <ul class="nav">
+            <li><a href="../storc.html">Home</a></li>
+            <li><a href="../team.html">Team Members</a></li>
+	    <li class="dropdown active">
+              <a href="" class="dropdown-toggle"
+		 data-toggle="dropdown">
+		Project
+		<b class="caret"></b>
+	      </a>
+              <ul class="dropdown-menu">
+                <li><a href="overview.html">Overview</a></li>
+		<li><a href="hardware.html">Hardware</a></li>
+		<li><a href="software.html">Software</a></li>
+		<li><a href="">Flight Dynamics</a></li>
+                <li><a href="controls.html">Controls</a></li>
+		<li><a href="payload.html">Payload System</a></li>
+		<li><a href="eval.html">Evaluation and Test</a></li>
+              </ul>
+            </li>
+	    
+            <li><a href="../pictures.html">Pictures</a></li>
+	    <li><a href="../videos.html">Videos</a></li>
+          </ul>
+          
+	</div>
+      </div>
+    </div> <!-- end navbar -->
+    
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+
+	<div class="span2">
+	  <img src="../logo.png"/>
+	</div>
+
+	<div class="span10">
+	  
+	  <div class="page-header">
+	    <h1>Flight Dynamics</h1>
+	  </div>
+	  
+	  <div class="row-fluid">
+	    <div class="span6">
+	      
+	      <p>
+		From past Penn MEAM Senior Design projects,
+		we inherited an incomplete MATLAB dynamics model, which
+		calculates the forces and moments on an RC model airplane
+		due to the airplane's current state and inputs. Through motor
+		characterization and thrust testing, the model was
+		improved to more accurately reflect the roll moment and
+		thrust of the airplane during flight. Additionally, more
+		accurate geometric and theoretical plane parameters were
+		calculated that are specific to the Super Cub. The result
+		is a completed dynamics model of the Super Cub that is
+		used in conjunction with the Simulink model to test the
+		control scheme without the need for extraneous test
+		flights.
+	      </p>
+	      
+	      <p>
+		The same flight dynamics can be used to estimate the safe takeoff
+		weight for our plane. By calculating the excess power of
+		the plane for a given speed of the propeller, maximum
+		takeoff weight can be calculated, as shown on the right. 
+		Since our propeller typically operates around 5000 rpm
+		in flight, the maximum takeoff weight is estimated to be
+		0.931 kg. The Super Cub weighs 0.770 kg with all of the
+		electronics; thus, it is possible to safely carry up to
+		0.161 kg of payload. All test drops were conducted with a
+		0.100 kg mass attached to a parachute.
+	      </p>
+
+	    </div>
+	    
+	    <div class="span6">
+		 <img src="pics/flight_takeoff.png" />
+	    </div>
+	    
+	  </div>
+
+
+
+	  <div style="text-align:center;">
+	    <a class="btn btn-danger btn-large" href="software.html">
+	      <i class="icon-chevron-left icon-white"></i> Back to Software
+	    </a>
+	    
+	    <a class="btn btn-danger btn-large" href="controls.html">
+	      Forward to Controls <i class="icon-chevron-right icon-white"></i>
+	    </a>
+	  </div>
+
+
+	</div>
+
+      </div> <!-- end row fluid -->
+
+    </div> <!-- end container-fluid -->
+
+
+    <div class="container-fluid" style="margin-left:6%;
+					margin-right:6%;
+					text-align: center;"> <!-- Footer -->
+
+      <hr/>
+      
+      Developed using
+      Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+
+      
+      <br/>
+      <br/>
+
+      <a rel="license" 
+	 href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">
+	<img alt="Creative Commons License" style="border-width:0" 
+	     src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/>
+      </a>
+      
+      <br/>
+      
+      This site's content is licensed under a <a rel="license"
+	href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative
+	Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+	License</a> unless otherwise noted.
+      
+      <br/>
+      <br/>
+
+    </div> <!-- end footer -->
+
+    <!-- Javascript -->
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+
+  </body>
+
+</html>

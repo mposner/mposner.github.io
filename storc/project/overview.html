@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <title>StoRC Overview</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
+
+    <!-- padding at the top to make room for the navbar -->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+      p {
+        font-size:16px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+          <a class="brand" href="../storc.html">StoRC</a>
+          
+	  <ul class="nav">
+            <li><a href="../storc.html">Home</a></li>
+            <li><a href="../team.html">Team Members</a></li>
+	    <li class="dropdown active">
+              <a href="" class="dropdown-toggle"
+		 data-toggle="dropdown">
+		Project
+		<b class="caret"></b>
+	      </a>
+              <ul class="dropdown-menu">
+                <li><a href="">Overview</a></li>
+		<li><a href="hardware.html">Hardware</a></li>
+		<li><a href="software.html">Software</a></li>
+		<li><a href="flight.html">Flight Dynamics</a></li>
+                <li><a href="controls.html">Controls</a></li>
+		<li><a href="payload.html">Payload System</a></li>
+		<li><a href="eval.html">Evaluation and Test</a></li>
+              </ul>
+            </li>
+	    
+            <li><a href="../pictures.html">Pictures</a></li>
+	    <li><a href="../videos.html">Videos</a></li>
+          </ul>
+          
+	</div>
+      </div>
+    </div> <!-- end navbar -->
+    
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+
+	<div class="span2">
+	  <img src="../logo.png"/>
+	</div>
+
+	<div class="span10">
+	  
+	  <div class="page-header">
+	    <h1>Project Overview</h1>
+	  </div>
+
+	  <p>
+	    The final design of the project involves a model airplane that
+	    autonomously navigates and delivers a payload package to a
+	    target designated before takeoff.
+	    The system process begins with a manual launch of the
+	    aircraft, piloted during the ascent via radio controller (RC). During
+	    the plane's ascent to constant altitude, data gathered
+	    from the Pitot probe and GPS sensor are used to construct a
+	    three-dimensional wind profile. 
+	    The average values of the wind components are input into the
+	    payload trajectory model, which then calculates the expected drift
+	    during the parachute's descent. From this information, the necessary
+	    offset is calculated, and the plane's target release coordinates are
+	    computed. 
+	  </p>
+	  
+	  <p>
+	    When the aircraft reaches its cruising
+	    altitude, the operator engages autonomous flight and the 
+	    aircraft navigates to its drop coordinates. Once in
+	    the vicinity of the drop location, the payload release
+	    mechanism deploys, allowing the package and parachute to
+	    safely drift to the ground. A physical depiction of
+	    this procedure is shown below.
+	  </p>
+	  
+	  <div style="text-align:center;">
+	    <img src="pics/overview_pic.jpg" />
+	  </div>
+	  
+	  <p>
+	    Although our plane is a reduced scale model of a real UAV, our plane
+	    dynamics model, controls model, and drop location model
+	    can be used on larger UAVs with only minor
+	    adjustments. The dynamics model allows users to see how
+	    the plane will react to an updated controls model,
+	    reducing the need for risky test flights. The controls
+	    model uses an appropriate combination of throttle and
+	    rudder control to maintain level flight and appropriate
+	    turns toward our drop location. Finally, the drop
+	    location model uses wind data collected during the
+	    ascent, parachute characteristics, and the physical
+	    release delay to determine when the payload release
+	    mechanism should be deployed.
+	    
+	    The design plan for each of these subsystems involved using theory to
+	    construct the initial model framework, and then validating
+	    and updating these models through the use of experimental
+	    flight data. The design approach and validation of each
+	    sub-system is detailed on their individual Project pages.
+
+	  </p>
+
+	  <div style="text-align:center;">
+	    <a class="btn btn-danger btn-large" href="../storc.html">
+	      <i class="icon-chevron-left icon-white"></i> Back to Home
+	    </a>
+	    
+	    <a class="btn btn-danger btn-large" href="hardware.html">
+	      Forward to Hardware <i class="icon-chevron-right icon-white"></i>
+	    </a>
+	  </div>
+
+
+	</div>
+
+      </div> <!-- end row fluid -->
+
+    </div> <!-- end container-fluid -->
+
+
+    <div class="container-fluid" style="margin-left:6%;
+					margin-right:6%;
+					text-align: center;"> <!-- Footer -->
+
+      <hr/>
+      
+      Developed using
+      Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+      
+      <br/>
+      <br/>
+
+      <a rel="license" 
+	 href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">
+	<img alt="Creative Commons License" style="border-width:0" 
+	     src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/>
+      </a>
+      
+      <br/>
+      
+      This site's content is licensed under a <a rel="license"
+	href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative
+	Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+	License</a> unless otherwise noted.
+      
+      <br/>
+      <br/>
+
+    </div> <!-- end footer -->
+
+    <!-- Javascript -->
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+
+  </body>
+
+</html>

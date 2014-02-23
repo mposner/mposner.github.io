@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <title>StoRC Evaluation and Test</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" />
+
+    <!-- padding at the top to make room for the navbar -->
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+      p {
+        font-size:16px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container-fluid">
+          <a class="brand" href="../storc.html">StoRC</a>
+          
+	  <ul class="nav">
+            <li><a href="../storc.html">Home</a></li>
+            <li><a href="../team.html">Team Members</a></li>
+	    <li class="dropdown active">
+              <a href="" class="dropdown-toggle"
+		 data-toggle="dropdown">
+		Project
+		<b class="caret"></b>
+	      </a>
+              <ul class="dropdown-menu">
+                <li><a href="overview.html">Overview</a></li>
+		<li><a href="hardware.html">Hardware</a></li>
+		<li><a href="software.html">Software</a></li>
+		<li><a href="flight.html">Flight Dynamics</a></li>
+                <li><a href="controls.html">Controls</a></li>
+		<li><a href="payload.html">Payload System</a></li>
+		<li><a href="">Evaluation and Test</a></li>
+              </ul>
+            </li>
+	    
+            <li><a href="../pictures.html">Pictures</a></li>
+	    <li><a href="../videos.html">Videos</a></li>
+          </ul>
+          
+	</div>
+      </div>
+    </div> <!-- end navbar -->
+    
+    <div class="container-fluid">
+      
+      <div class="row-fluid">
+
+	<div class="span2">
+	  <img src="../logo.png"/>
+	</div>
+
+	<div class="span10">
+	  
+	  <div class="page-header">
+	    <h1>Evaluation and Test</h1>
+	  </div>
+	  
+	  <h2>Flight Testing</h2>
+	  
+	  <p>
+	    Testing our airplane through full-scale flight testing
+	    was an integral component of our project.  Since we were
+	    based on Penn's campus in Philadelphia, we didn't have
+	    much room to fly around campus (too many buildings,
+	    people, etc...).  However, just north of us along the
+	    Schuylkill river are some nice park areas that are a part of
+	    Fairmount Park.  West Fairmount Park has open fields
+	    and baseball diamonds, which were perfect for our purposes
+	    and not too far away.  On several occasions we saw others
+	    flying RC airplanes and enjoyed talking to them about
+	    their planes.  The majority of our tests took
+	    place at sunrise (wind conditions are often more ideal
+	    earlier in the morning) and would last for several hours
+	    depending on our testing plans, weather, and severity of
+	    crash damage.  See
+	    the <a href="../pictures.html">Picture</a>
+	    and <a href="../videos.html">Video</a> galleries for more
+	    info about our flight tests.
+	  </p>
+
+	  <br/>
+
+	  <h2>Flight Dynamics: Model Validation</h2>
+	  
+	  <p>
+	    Before using the plane dynamics model to choose gain
+	    values and settle on our controls scheme, validation
+	    of the theory through comparison with test data was
+	    necessary. The plots on the right show actual elevator and
+	    rudder input from ten seconds of a test flight. The
+	    red and black lines compare the actual pitch and roll
+	    rates measured by the plane's gyroscopes to the
+	    plane's reactions as predicted by the model.
+	  </p>
+	  <p>
+	    It is clear that the model predicts the pitch response
+	    of the aircraft
+	    very well. The model does not correlate exactly with
+	    every feature of the roll response, but overall the
+	    correlation is strong enough for the model to be
+	    useful in testing and validating the controls. While
+	    elevator is directly correlated to pitch, rudder is
+	    typically used to control yaw. More sophisticated
+	    aircraft use ailerons to control roll, but since the
+	    SuperCub does not have ailerons, rudder is used as a
+	    substitute. Therefore, the relationship between rudder
+	    and roll is less direct.
+	  </p>
+	  <p>
+	    After validating the model
+	    with several segments of test flight, it was used as
+	    an effective way to test different controls schemes
+	    and their effects on the plane. Using this model gave
+	    insight into the results of tweaking gains or
+	    overhauling the architecture without the need for
+	    potentially dangerous test
+	    flights. This portion of the project was one of the
+	    most valuable and has the ability to be
+	    adapted for use on large scale UAVs with only minor
+	    changes to the motor model and certain physical
+	    characteristics of the plane.
+	  </p>
+
+
+	  <div class="row-fluid">
+	    <div class="span6" style="text-align:center;">
+	      <img src="pics/eval_dyn_pitch.png" />
+	    </div>
+	    
+	    <div class="span6" style="text-align:center;">
+	      <img src="pics/eval_dyn_roll.png" />
+	    </div>
+	    
+	  </div>
+
+	  <br />
+
+	  <h2>Controls Evaluation</h2>
+	      
+	  <div class="row-fluid">
+	    <div class="span5">
+	      
+	      <p>
+		The controls model provided an excellent starting point for
+		estimating gain values. However, since no model is
+		perfectly accurate, it was important to be able to
+		fine-tune these controls gains in real-time flight
+		tests. The dial knobs on our radio
+		controller were used when needed in flight tests to
+		adjust the control gains around their nominal value.
+		The plot to the right shows these gain adjustments
+		during one of our flight tests.
+	      </p>
+	      <p>
+		In order to evaluate the success of our controls
+		algorithm, we can observe the difference between the
+		commanded (desired) input and the airplane's resulting
+		motion.  In the figure below, the red line shows
+		bank angle commands that were sent to
+		the airplane during one test flight. The blue line
+		shows the actual airplane bank angle that was measured
+		by the on-board sensors. The close match between these
+		two graphs shows that the autonomous rudder PID
+		control algorithm provides satisfactory results in
+		flight.
+	      </p>
+
+	    </div>
+	    
+	    <div class="span7" style="text-align:center;">
+	      <img src="pics/eval_gains.png" />
+	    </div>
+	    
+	  </div> <!-- end row-fluid -->
+
+	  <br/>
+	  
+	  <div class="row-fluid" style="text-align:center">
+	    <img src="pics/eval_auto_rudder.png" />
+	  </div>
+
+	  <br/>
+
+	  <h2>Software Evaluation</h2>
+
+	  <p>
+	    Numerous ground tests were conducted to ensure that
+	    software and hardware adjustments were performing as
+	    expected without risking the entire system in a flight
+	    test. These ground tests were performed on each component
+	    and iteration of the system individually. Tests included
+	    quantification of GPS position and speed accuracy (running
+	    across a known distance outside),
+	    testing of orientation, Pitot airspeed (wind tunnel
+	    testing), temperature and barometer sensors (taking
+	    data at every floor of a high rise of known height),
+	    on-board and telemetry logging, navigation,
+	    controls and servo deflections, and servo release mechanisms.
+	  </p>
+
+
+	  <br/>
+
+	  <div style="text-align:center;">
+	    <a class="btn btn-danger btn-large" href="payload.html">
+	      <i class="icon-chevron-left icon-white"></i> Back to
+	      Payload System
+	    </a>
+	    
+	    <a class="btn btn-danger btn-large" href="../storc.html">
+	      Return to Home <i class="icon-chevron-right icon-white"></i>
+	    </a>
+	  </div>
+
+
+	</div>
+
+      </div> <!-- end row fluid -->
+
+    </div> <!-- end container-fluid -->
+
+
+    <div class="container-fluid" style="margin-left:6%;
+					margin-right:6%;
+					text-align: center;"> <!-- Footer -->
+
+      <hr/>
+      
+      Developed using
+      Twitter's <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
+
+      
+      <br/>
+      <br/>
+
+      <a rel="license" 
+	 href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">
+	<img alt="Creative Commons License" style="border-width:0" 
+	     src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/>
+      </a>
+      
+      <br/>
+      
+      This site's content is licensed under a <a rel="license"
+	href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative
+	Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+	License</a> unless otherwise noted.
+      
+      <br/>
+      <br/>
+
+    </div> <!-- end footer -->
+
+    <!-- Javascript -->
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap-dropdown.js"></script>
+
+  </body>
+
+</html>
