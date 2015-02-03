@@ -14,6 +14,20 @@
       body {
         padding-top: 60px;
       }
+	  /* css magic to auto-resize youtube embeds */
+	  .vidContainer {
+	    position: relative;
+	    padding-bottom: 56.25%;
+	    padding-top: 25px;
+	    height: 0;
+	  }
+	  .vidContainer iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     </style>
 
   </head>
@@ -72,7 +86,9 @@
 	  <ul class="thumbnails">
 <li class="span4">
 <div class="thumbnail">
-<iframe width="391" height="220" src="//www.youtube.com/embed/WSr3wE9eTdY" frameborder="0" allowfullscreen></iframe>
+<div class="vidContainer">
+<iframe width="391" height="220" src="http://www.youtube.com/embed/WSr3wE9eTdY" frameborder="0" allowfullscreen></iframe>
+</div>
 <div class="caption">
 <h3>
 First SuperCub Flight
@@ -86,7 +102,9 @@ This was our first flight with our components in the SuperCub. The electronics w
 </li>
 <li class="span4">
 <div class="thumbnail">
-<iframe width="391" height="220" src="//www.youtube.com/embed/XRoAhitF-o8" frameborder="0" allowfullscreen></iframe>
+<div class="vidContainer">
+<iframe width="391" height="220" src="http://www.youtube.com/embed/XRoAhitF-o8" frameborder="0" allowfullscreen></iframe>
+</div>
 <div class="caption">
 <h3>
 First RQ-11 Flight
@@ -100,7 +118,9 @@ This was our first flight with the new PROJET RQ-11 airplane we had assembled. I
 </li>
 <li class="span4">
 <div class="thumbnail">
-<iframe width="391" height="220" src="//www.youtube.com/embed/jcXFlYhpWAQ" frameborder="0" allowfullscreen></iframe>
+<div class="vidContainer">
+<iframe width="391" height="220" src="http://www.youtube.com/embed/jcXFlYhpWAQ" frameborder="0" allowfullscreen></iframe>
+</div>
 <div class="caption">
 <h3>
 Payload Test
@@ -116,7 +136,9 @@ This was our first test of a basic payload release. We installed a servo in the 
 <ul class="thumbnails">
 <li class="span4">
 <div class="thumbnail">
-<iframe width="391" height="220" src="//www.youtube.com/embed/pInApZoRVm4" frameborder="0" allowfullscreen></iframe>
+<div class="vidContainer">
+<iframe width="391" height="220" src="http://www.youtube.com/embed/pInApZoRVm4" frameborder="0" allowfullscreen></iframe>
+</div>
 <div class="caption">
 <h3>
 First Controls Test: Rudder
@@ -130,7 +152,9 @@ Our first controls test was using a simple control scheme on the rudder to keep 
 </li>
 <li class="span4">
 <div class="thumbnail">
-<iframe width="391" height="220" src="//www.youtube.com/embed/O6NXVuHXqic" frameborder="0" allowfullscreen></iframe>
+<div class="vidContainer">
+<iframe width="391" height="220" src="http://www.youtube.com/embed/O6NXVuHXqic" frameborder="0" allowfullscreen></iframe>
+</div>
 <div class="caption">
 <h3>
 Good Landing
@@ -144,7 +168,9 @@ Probably our best landing of the project, courtesy of Jacob
 </li>
 <li class="span4">
 <div class="thumbnail">
-<iframe width="391" height="220" src="//www.youtube.com/embed/3ZOLnZ940bY" frameborder="0" allowfullscreen></iframe>
+<div class="vidContainer">
+<iframe width="391" height="220" src="http://www.youtube.com/embed/3ZOLnZ940bY" frameborder="0" allowfullscreen></iframe>
+</div>
 <div class="caption">
 <h3>
 A Windy Day
@@ -160,7 +186,9 @@ An example of the windy conditions we faced some days. This day, we werent so lu
 <ul class="thumbnails">
 <li class="span4">
 <div class="thumbnail">
-<iframe width="391" height="220" src="//www.youtube.com/embed/TpRuTRk9BLQ" frameborder="0" allowfullscreen></iframe>
+<div class="vidContainer">
+<iframe width="391" height="220" src="http://www.youtube.com/embed/TpRuTRk9BLQ" frameborder="0" allowfullscreen></iframe>
+</div>
 <div class="caption">
 <h3>
 Greatest Team-building Exercise Ever
@@ -174,7 +202,9 @@ When our plane crashed into a tree during an especially windy day, we resorted t
 </li>
 <li class="span4">
 <div class="thumbnail">
-<iframe width="391" height="220" src="//www.youtube.com/embed/DR8WxQ5hou8" frameborder="0" allowfullscreen></iframe>
+<div class="vidContainer">
+<iframe width="391" height="220" src="http://www.youtube.com/embed/DR8WxQ5hou8" frameborder="0" allowfullscreen></iframe>
+</div>
 <div class="caption">
 <h3>
 Autonomous Turning
