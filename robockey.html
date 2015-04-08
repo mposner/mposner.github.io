@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+        <title>Robockey</title>
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap_3.3.2.min.css" />
+
+        <style type="text/css">
+        p, a, .thumbnail {
+            font-size:16px;
+        }
+        .well {
+            background-color: #EEEEEE;
+        }
+        </style>
+    </head>
+
+
+    <body>
+
+        <div class="container-fluid">
+        
+            <div class="row">
+
+                <div class="col-md-3" style="padding: 15px"> <!-- sidebar -->
+                    <div class="well">
+
+                        <img src="images/gears.jpg" class="img-responsive img-rounded center-block"/>
+
+                        <h3>Michael Posner</h3>
+
+                        <p> I currently work as a System Software Engineer.
+                        I earned a Masters degree in Robotics as well as my Bachelors degrees in
+                        Computer Science and in Mechanical Engineering from the University
+                        of Pennsylvania.  My interests include robotics, embedded systems,
+                        aerospace, machine learning, artificial intelligence, and distributed systems.
+                        </p>
+
+                        <a href="http://github.com/mposner" ><img src="fonts/GitHub-Mark-32px.png" style="margin:10px"/> </a>
+                        &nbsp;
+                        <a href="https://www.linkedin.com/pub/michael-posner/78/466/b12"><img src="fonts/LinkedIn-Black-34px-R.png" style="margin:10px"/></a>
+                        
+                    </div>
+                </div> <!-- end sidebar -->
+
+
+                <div class="col-md-9" style="padding: 15px"> <!-- content -->
+
+                    <!-- Robockey -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            
+                            <ol class="breadcrumb">
+                              <li><a href="index.html">Home</a></li>
+                              <li class="active">Robockey</li>
+                            </ol>
+                                    
+                            <div class="row">
+                            
+                                <div class="col-md-8">
+                                    <h1>Robockey</h1>
+                                </div>
+                                
+                                <div class="col-md-4 text-right">
+                                    <h4> MEAM 510: Mechatronics </h4>
+                                    <h4> University of Pennsylvania </h4>
+                                    <h4> Fall 2011 </h4>
+                                    <h4> <a href="http://robockey.com">robockey.com</a> </h4>
+                                </div>
+                            </div> 
+                            
+                            <hr/>
+                            
+                            <div class="row">
+                            
+                                <div class="col-md-12">
+                                    <p> For my Mechatronics class final project, we worked in teams of three 
+                                        to create a team of autonomous hockey-playing robots using microcontrollers,
+                                        IR phototransistors, Wiimote IR cameras, wireless modules, motors, 
+                                        and whatever we could find.
+                                    </p>
+                                    
+                                    <h3> The Game </h3>
+                                        <div class="thumbnail" style="float:right">
+                                            <img src="images/projects/robockey/rink.png" class="img-responsive"/>
+                                            <div class="caption text-center">
+                                                Robockey Rink (<a href="http://medesign.seas.upenn.edu/index.php/Courses/MEAM510-11C-ROBOCKEY">source</a>)
+                                            </div>
+                                        </div>
+                                        <p> Two teams face off in a rink approximately 7.5 ft by 4 ft in size.  Each team fields
+                                            three robots.  A goal is scored if the puck crosses the opposing team's goal line.
+                                            Play is divided into two one-minute halves, with halftime and timeouts lasting 30 seconds each.
+                                            If the score is tied at the end of regulation, another half is played following a second
+                                            halftime, and if play is still tied a best-of-three shootout decides the winning team.
+                                        </p>
+                                        <p> Two key elements of the rink are augmented to assist the robots.  First, the puck consists
+                                            of a clear plastic cylinder 3 inches in diameter and 1 inch high.  Inside the puck there 
+                                            is a ring of equally spaced IR LEDs.  The robots use this IR light to locate the puck.
+                                            Second, there is a constellation of 4 IR LED clusters hung 5 meters above the center of
+                                            the rink.  The robots use this cluster to locate and orient themselves on the rink.
+                                        </p>
+                                    
+                                    <h3> Design </h3>
+                                    <h3> Fabrication </h3>
+                                    <h3> Software </h3>
+                                    <h3> Testing </h3>
+                                    <h3> Results </h3>
+                                    <p>
+                                        The robots navigated the rink by using their Wiimote IR cameras to view a 
+                                        &quot;constellation&quot; of IR LEDs placed above the rink, and communicated with each 
+                                        other in order to coordinate attacks on the puck (and avoid running into each 
+                                        other).  Our goalie was designed to move back and forth along the goal crease 
+                                        and block the puck (which was ringed by a number of IR LEDs).  Our two forward 
+                                        robots were designed to find the puck, move towards it, then steer it towards 
+                                        the opposing goal (but also away from our own goal), get within range, and 
+                                        then shoot the puck using a solenoid.  I also created a diagnostic display 
+                                        in MATLAB to observe robot data and calculated field position.  Our robots 
+                                        placed in the top 8 out of a field of 25 teams.
+                                    </p>
+                                </div>
+                            </div> 
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </div> <!-- end content -->
+
+            </div> <!-- end row -->
+            
+        </div> <!-- end container-fluid -->
+
+        <div class="container-fluid" style="text-align:center;"> <!-- Footer -->
+
+            <hr/>
+
+            <p><em><a href="http://parkviewtsa.com/cyberspace/cyberspace2010/images/5e08a3ec-2ff4-4ce6-b135-181cda8042ec.indust_engineer.jpg">Gear
+            image source</a>.  Logos copyright <a href="http://github.com">GitHub</a> and <a href="http://www.linkedin.com">LinkedIn</a>.</em></p>
+
+            <p>Developed using Twitter's <a href="http://getbootstrap.com">Bootstrap</a></p>
+
+            <a rel="license"
+            href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">
+            <img alt="Creative Commons License" style="border-width:0"
+            src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/>
+            </a>
+
+            <br/>
+
+            <p>
+            This site's content is licensed under a <a rel="license"
+            href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative
+            Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+            License</a> unless otherwise noted.
+            </p>
+        </div> <!-- end footer -->
+
+
+        <!-- Javascript -->
+        <script src="js/jquery_1.11.2.min.js"></script>
+
+    </body>
+
+
+</html>
