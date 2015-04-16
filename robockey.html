@@ -94,7 +94,8 @@
                                             </div>
                                         </div>
                                         <p> Two teams face off in a rink approximately 7.5 ft by 4 ft in size.  Each team fields
-                                            three robots.  A goal is scored if the puck crosses the opposing team's goal line.
+                                            three robots which must fit inside a 13cm-tall cylinder with a diameter of 15cm.  A goal 
+											is scored if the puck crosses the opposing team's goal line.
                                             Play is divided into two one-minute halves, with halftime and timeouts lasting 30 seconds each.
                                             If the score is tied at the end of regulation, another half is played following a second
                                             halftime, and if play is still tied a best-of-three shootout decides the winning team.
@@ -107,7 +108,46 @@
                                         </p>
                                     
                                     <h3> Design </h3>
+									
+                                        <p> In order to find the puck, we needed to place IR phototransistors on our robots.  We used three 
+											phototransistors, one on each side of the robot and one facing forward.  This allowed us to narrow 
+											down the puck's location by observing the difference in signal strength between the left, right, 
+											and center phototransistors and adjusting our heading to keep the puck in front of the robot.
+										</p>
+										<p> In order to detect when the robot had successfully collected the puck, we had originally planned
+											to use limit switches placed in the front of the robot. The rules stated that the robot could not
+											enclose more than 20% of the puck's area when viewed from above, so this limited our options for
+											detection and transportation.  After some testing we determined that the constant switch bouncing
+											that would occur as the robot pushed the puck would make it difficult for software to accurately 
+											determine whether the robot was still in control of the puck.  We decided to add another phototransistor
+											in the front of the robot that was angled inwards towards the body of the robot and shielded.  This
+											would prevent false triggering of the phototransistor when the puck was not close to the robot, but
+											give us a more reliable mechanism to detect whether the robot was in control of the puck.
+										</p>
+										<p> Unlike regular hockey, shooting the puck was not a necessary component to this game.  Many teams 
+											relied on simply trying to push the puck into the goal.  However we decided early on that to make 
+											it more fun	we would try to give our robot the ability to shoot the puck.  We settled on using a 
+											solenoid because of its speed and the force we would require to shoot the puck.  We quickly discovered 
+											that the puck was quite heavy and we would need large solenoids in order to shoot.  We dedicated 
+											the lower center of our two forward robots to solenoids. 
+										</p>
+										<p> Another important part of this competition was the choice of robot size and weight.  Some teams chose
+											to design robots that were very light and fast.  Our team chose to do the opposite, and build a 
+											heavier robot that would hold its ground better.  The large solenoid and multiple batteries helped
+											keep us from being pushed around and gave our wheels better traction.
+                                        </p>
+										
+									
                                     <h3> Fabrication </h3>
+									<h3> Electronics </h3>
+										<p>
+											Since large solenoids were 
+											required, this meant that our solenoid would have to be high voltage (~12V), which also implied that
+											it would draw significant current.  These requirements led us to choose LiPo batteries to power 
+											the solenoids because of their high discharge rates.  The LiPo battery was separate from the main
+											power system on the robot, which was two packs of 6 AA batteries.  These batteries supplied sufficient
+											power to the microcontroller and sensors as well as the motors.
+										</p>
                                     <h3> Software </h3>
                                     <h3> Testing </h3>
                                     <h3> Results </h3>
