@@ -90,7 +90,7 @@
                                         <div class="thumbnail" style="float:right">
                                             <img src="images/projects/robockey/rink.png" class="img-responsive"/>
                                             <div class="caption text-center">
-                                                Robockey Rink (<a href="http://medesign.seas.upenn.edu/index.php/Courses/MEAM510-11C-ROBOCKEY">source</a>)
+                                                Robockey rink (<a href="http://medesign.seas.upenn.edu/index.php/Courses/MEAM510-11C-ROBOCKEY">source</a>)
                                             </div>
                                         </div>
                                         <p> Two teams face off in a rink approximately 7.5 ft by 4 ft in size.  Each team fields
@@ -115,10 +115,10 @@
 											and center phototransistors and adjusting our heading to keep the puck in front of the robot.
 										</p>
                                         
-                                        <div class="thumbnail" style="float:right">
-                                            <img src="images/projects/robockey/sensors.png" class="img-responsive"/>
+                                        <div class="thumbnail" style="float:left; margin-right: 10px">
+                                            <img src="images/projects/robockey/puck.png" class="img-responsive"/>
                                             <div class="caption text-center">
-                                                A Forward Robot (visible IR phototransistors are circled)
+                                                Robockey puck (<a href="http://medesign.seas.upenn.edu/index.php/Courses/MEAM510-11C-ROBOCKEY">source</a>)
                                             </div>
                                         </div>
                                         
@@ -132,6 +132,7 @@
 											would prevent false triggering of the phototransistor when the puck was not close to the robot, but
 											give us a more reliable mechanism to detect whether the robot was in control of the puck.
 										</p>
+                                        
 										<p> Unlike regular hockey, shooting the puck was not a necessary component to this game.  Many teams 
 											relied on simply trying to push the puck into the goal.  However we decided early on that to make 
 											it more fun	we would try to give our robot the ability to shoot the puck.  We settled on using a 
@@ -144,18 +145,40 @@
 											heavier robot that would hold its ground better.  The large solenoid and multiple batteries helped
 											keep us from being pushed around and gave our wheels better traction.
                                         </p>
-										
+										<p> After designing all of our robots with SolidWorks, we used the school's laser cutters to create them.
+                                            The robots consisted of several layers of laser-cut acrylic, connected with bolts and standoffs.  We
+                                            went through several iterations of laser-cut designs as we adjusted the mounting and fit of various
+                                            components.  We also fabricated the wheels out of acryclic, and added rubber bands to the edges for 
+                                            traction.
+                                        </p>
 									
-                                    <h3> Fabrication </h3>
-									<h3> Electronics </h3>
+                                    
+                                    <div class="thumbnail" >
+                                        <img src="images/projects/robockey/systems.png" class="img-responsive center-block"/>
+                                        <div class="caption text-center">
+                                            A forward robot (electronics systems highlighted)
+                                        </div>
+                                    </div>
+                                        
+                                    
+                                    <h3> Electronics</h3>
+                                    
+                                        <p> We soldered together our own motor driver boards and phototransistor circuits onto perfboards.
+                                            We used potentiometers in the phototransistor circuts so that we could easily tune the sensitivity of the
+                                            phototransistors.  This is important because the amount of ambient IR light present in the environment
+                                            had a significant impact on their measurements.  The phototransistors had to be adjusted when switching
+                                            from a dark room to a bright room and even between daytime and nighttime.  We also added several switches
+                                            and wired up an 8 segment display to our robot to help aid in debugging our code.
+                                        </p>
 										<p>
-											Since large solenoids were 
-											required, this meant that our solenoid would have to be high voltage (~12V), which also implied that
-											it would draw significant current.  These requirements led us to choose LiPo batteries to power 
+											Since we wanted large solenoids in order to shoot the puck, this meant that our solenoids would have 
+                                            to be high voltage (~12V), which also implied that
+											they would draw significant current.  These requirements led us to choose LiPo batteries to power 
 											the solenoids because of their high discharge rates.  The LiPo battery was separate from the main
-											power system on the robot, which was two packs of 6 AA batteries.  These batteries supplied sufficient
+											power system on the robot, which consisted of two packs of 6 AA batteries.  These batteries supplied sufficient
 											power to the microcontroller and sensors as well as the motors.
 										</p>
+                                    
                                     <h3> Software </h3>
                                     <h3> Testing </h3>
                                     <h3> Results </h3>
