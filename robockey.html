@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap_3.3.2.min.css" />
 
         <style type="text/css">
-        p, a, .thumbnail {
+        p, a, .thumbnail, ul {
             font-size:16px;
         }
         .well {
@@ -109,6 +109,10 @@
                                     
                                     <h3> Design </h3>
                                         
+                                        <p> We decided to create two forward robots and one goalie robot.  The forward robots would have all sensors
+                                            and equipment necessary to play the game.  The goalie robot would be different in that it would drive side to
+                                            side in front of the goal and seek to place itself in front of the puck.
+                                        </p>
                                         <p> In order to find the puck, we needed to place IR phototransistors on our robots.  We used three 
 											phototransistors, one on each side of the robot and one facing forward.  This allowed us to narrow 
 											down the puck's location by observing the difference in signal strength between the left, right, 
@@ -180,10 +184,59 @@
 										</p>
                                     
                                     <h3> Software </h3>
-                                    <h3> Testing </h3>
+                                    
+                                        <p> The robot software is organized into a state machine.  At its core the main states are Stop, Find Puck,
+                                            Find Goal, Shoot, and Team Override.  A typical progression would be:
+                                        </p>
+                                        
+                                        <div class="thumbnail" style="float:right">
+                                            <img src="images/projects/robockey/state.png" class="img-responsive"/>
+                                            <div class="caption text-center">
+                                                State diagram of the robot software
+                                            </div>
+                                        </div>
+                                        
+                                        <ul><li>Stay in Stop mode until signaled that the game has begun</li>
+                                            <li>Go to Find Puck mode and search for the puck</li>
+                                            <li>When the puck is acquired, go to Find Goal mode and drive towards the goal</li>
+                                            <li>Once we are within goal distance, Shoot the puck</li>
+                                        </ul>
+                                        
+                                        <p> In addition to this state machine, the microcontroller is constantly updating data from its sensors
+                                            and checking for new messages from the wireless module.  A new wireless packet could be a command packet,
+                                            signalling the robot to stop for halftime or to detangle from another robot, or it could be a teammate
+                                            packet from another of our robots.  These teammate packets indicated that the other robot has found the
+                                            puck and that instead of possibly getting in the way of the other robot, this robot should move towards the
+                                            goal on the opposite side of the rink from its teammate to aid in goal scoring.
+                                        </p>
+                                        
+                                        <p> One of the most complex parts of the software is the section that determines the robot's position and
+                                            orientation on the rink.  Here, the IR camera from a Wiimote is used along with a supplied interface board
+                                            to provide the microcontroller with the coordinates (in pixel space) of IR light sources along with their
+                                            perceived intensity.  Using this information along with the known dimensions of the IR constellation, the 
+                                            localization code calculates the distances between the light sources to map the perceived pattern to the
+                                            reference constellation.  It uses this information as well as a scaling factor to calculate the orientation
+                                            and position of the robot on the rink.
+                                        </p>
+                                        
+                                        <p> Because of the complexity of these and other mathematical operations, as well as the nature of running embedded
+                                            code, our team created a debug program to aid in troubleshooting our robot software.  This program was written
+                                            in MATLAB and runs on a computer that is connected to the microcontroller via a USB serial interface.  This program
+                                            not only includes robot routines to print debug information to the computer program's console, it also visualizes
+                                            data sent from the robot in a real-time virtual representation of the rink.
+                                        </p>
+                                        
+                                        <div class="thumbnail" style="float:right">
+                                            <img src="images/projects/robockey/gui.png" class="img-responsive"/>
+                                            <div class="caption text-center">
+                                                Screenshot of the debug program.  On the right is the view of the robot's calculated position and orientation
+                                                on the field, and on the left is data captured from the robot as well as the robot's view of the IR constellation.
+                                            </div>
+                                        </div>
+                                        
                                     <h3> Results </h3>
-                                    <p>
-                                        The robots navigated the rink by using their Wiimote IR cameras to view a 
+                                    <p> RESULTS GO HERE </p>
+                                    <p> The robots navigated the rink by using their Wiimote IR cameras to view a 
                                         &quot;constellation&quot; of IR LEDs placed above the rink, and communicated with each 
                                         other in order to coordinate attacks on the puck (and avoid running into each 
                                         other).  Our goalie was designed to move back and forth along the goal crease 
