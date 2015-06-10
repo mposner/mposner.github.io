@@ -235,18 +235,24 @@
                                         </div>
                                         
                                     <h3> Results </h3>
-                                    <p> RESULTS GO HERE </p>
-                                    <p> The robots navigated the rink by using their Wiimote IR cameras to view a 
-                                        &quot;constellation&quot; of IR LEDs placed above the rink, and communicated with each 
-                                        other in order to coordinate attacks on the puck (and avoid running into each 
-                                        other).  Our goalie was designed to move back and forth along the goal crease 
-                                        and block the puck (which was ringed by a number of IR LEDs).  Our two forward 
-                                        robots were designed to find the puck, move towards it, then steer it towards 
-                                        the opposing goal (but also away from our own goal), get within range, and 
-                                        then shoot the puck using a solenoid.  I also created a diagnostic display 
-                                        in MATLAB to observe robot data and calculated field position.  Our robots 
-                                        placed in the top 8 out of a field of 25 teams.
+                                    <p> The matches we played consisted of a series of friendly matches followed by several ranked bracket-style matches.
+                                        Our robots did relatively well orienting themselves on the rink since we devoted so much time to our localization code
+                                        and our debugging system.  As the matches continued we discovered that one of the things we had to tweak most often about
+                                        our robots was the group of IR phototransistors used to detect the puck.  We often had to adjust their sensitivity and eventually
+                                        tried to shield them around the edges from other light sources by creating hoods for them out of tape.  If we could start over
+                                        again, we would probably try to devote more time to create a more robust puck finding system.  We also discovered that our
+                                        goalie would slowly begin to drift away from being parallel with the goal as he tried to move back and forth.  This was due to being
+                                        bumped but also due to the inevitable occasional slip of one wheel relative to the other on the rink.  We could have improved
+                                        our goalie to detect this and correct itself.  The robots also did a good job of staying out of each other's way because
+                                        of our team override code we added.  This prevented us from sabotaging ourselves several times and gave us an advantage 
+                                        over other teams.
                                     </p>
+                                    <p> In the final bracket our team did very well, placing in the top 8 out of 25 teams (we lost in the quarterfinals).  
+                                        Below you can find additional photos and video from our tournament games.
+                                    </p>
+                                    
+                                    <h3> Tournament </h3>
+                                    <p> Pictures and video </p>
                                 </div>
                             </div> 
                             
