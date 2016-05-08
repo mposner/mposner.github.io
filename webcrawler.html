@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <!-- Bootstrap incantations -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Web Crawler</title>
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap_3.3.2.min.css" />
+
+        <style type="text/css">
+        p, a, .thumbnail, ul {
+            font-size:16px;
+        }
+        .well {
+            background-color: #EEEEEE;
+        }
+        
+        /* css magic to auto-resize youtube embeds */
+	    .vidContainer {
+	      position: relative;
+	      padding-bottom: 56.25%;
+	      padding-top: 25px;
+	      height: 0;
+	    }
+	    .vidContainer iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        
+        </style>
+    </head>
+
+
+    <body>
+
+        <div class="container-fluid">
+        
+            <div class="row">
+
+                <div class="col-md-3" style="padding: 15px"> <!-- sidebar -->
+                    <div class="well">
+
+                        <img src="images/gears.jpg" class="img-responsive img-rounded center-block"/>
+
+                        <h3>Michael Posner</h3>
+
+                        <p> I currently work as a System Software Engineer.
+                        I earned a Masters degree in Robotics as well as Bachelors degrees in
+                        Computer Science and in Mechanical Engineering from the University
+                        of Pennsylvania.  My interests include robotics, embedded systems,
+                        aerospace, machine learning, artificial intelligence, distributed systems, and data analysis.
+                        </p>
+
+                        <a href="http://github.com/mposner" ><img src="fonts/GitHub-Mark-32px.png" style="margin:10px"/></a>
+                        &nbsp;
+                        <a href="https://www.linkedin.com/pub/michael-posner/78/466/b12"><img src="fonts/LinkedIn-Black-34px-R.png" style="margin:10px"/></a>
+                        
+                    </div>
+                </div> <!-- end sidebar -->
+
+
+                <div class="col-md-9" style="padding: 15px"> <!-- content -->
+
+                    <!-- Web Crawler -->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            
+                            <ol class="breadcrumb">
+                              <li><a href="index.html">Home</a></li>
+                              <li class="active">Web Crawler</li>
+                            </ol>
+                                    
+                            <div class="row">
+                            
+                                <div class="col-md-8">
+                                    <h1>Web Crawler</h1>
+                                </div>
+                                
+                                <div class="col-md-4 text-right">
+                                    <h4> CIS 455: Internet and Web Systems </h4>
+                                    <h4> University of Pennsylvania </h4>
+                                    <h4> Spring 2013 </h4>
+                                    <h4> <a href="http://www.cis.upenn.edu/~ahae/teaching/cis455-s13/">Class Website</a> </h4>
+                                </div>
+                            </div> 
+                            
+                            <hr/>
+                            
+                            <div class="row">
+                            
+                                <div class="col-md-12">
+                                    <p> As part of my final project, I created a multithreaded, distributed web crawler written
+                                        in Java.  Each node ran several threads to visit and download web pages, communicated with
+                                        each other in order to divide up found URLs, and stored data on local BerkeleyDB storage.
+                                    </p>
+                                    
+                                    <h3> Objectives </h3>
+                                    
+                                    <h3> Design </h3>
+                                    
+                                    <h3> Distributed Network </h3>
+                                    
+                                    <h3> Web Pages </h3>
+                                    
+                                    <h3> Multi-Threading </h3>
+                                    
+                                    <h3> Storage </h3>
+                                    
+                                    <h3> Results </h3>
+                                    
+                                </div>
+                            </div> 
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </div> <!-- end content -->
+
+            </div> <!-- end row -->
+            
+        </div> <!-- end container-fluid -->
+
+        <div class="container-fluid" style="text-align:center;"> <!-- Footer -->
+
+            <hr/>
+
+            <p><em><a href="http://parkviewtsa.com/cyberspace/cyberspace2010/images/5e08a3ec-2ff4-4ce6-b135-181cda8042ec.indust_engineer.jpg">Gear
+            image source</a>.  Logos copyright <a href="http://github.com">GitHub</a> and <a href="http://www.linkedin.com">LinkedIn</a>.</em></p>
+
+            <p>Developed using Twitter's <a href="http://getbootstrap.com">Bootstrap</a></p>
+
+            <a rel="license"
+            href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">
+            <img alt="Creative Commons License" style="border-width:0"
+            src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/>
+            </a>
+
+            <br/>
+
+            <p>
+            This site's content is licensed under a <a rel="license"
+            href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative
+            Commons Attribution-NonCommercial-ShareAlike 3.0 United States
+            License</a> unless otherwise noted.
+            </p>
+        </div> <!-- end footer -->
+
+
+        <!-- Javascript -->
+        <script src="js/jquery_1.11.2.min.js"></script>
+        <script src="js/bootstrap_3.3.2.min.js"></script>
+
+    </body>
+
+
+</html>
